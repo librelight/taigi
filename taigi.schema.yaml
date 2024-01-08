@@ -1,0 +1,29 @@
+schema:
+  schema_id: taigi
+  name: 臺語
+  version: 0
+
+engine:
+  processors:
+    - ascii_composer
+    - speller
+    - selector
+    - punctuator
+    - express_editor
+  segmentors:
+    - abc_segmentor
+    - punct_segmentor
+  translators:
+    - script_translator
+    - punct_translator
+
+speller:
+  alphabet: qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM`-=[]\;,./~!@#$%^&*()_+{}|:"<>?
+  delimiter: "'"
+
+switches:
+  - name: full_shape
+    states: [半形,全形]
+
+translator: 
+  dictionary: taigi
